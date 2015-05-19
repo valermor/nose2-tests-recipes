@@ -14,57 +14,38 @@
 # limitations under the License.                                           #
 ############################################################################
 
+from time import sleep
 import unittest
 
-from src.groups import groups, SINGLE_GROUP, A_GROUP, ANOTHER_GROUP, EXCLUDED_GROUP
+from src.groups import groups, SINGLE_GROUP, A_GROUP, ANOTHER_GROUP, EXCLUDED_GROUP, CONCURRENT
 
 
+WAIT_PERIOD = 2
 
 
-class SingleGroupTest(unittest.TestCase):
+class ConcurrencyTest(unittest.TestCase):
 
-    @groups(SINGLE_GROUP)
+    @groups(CONCURRENT)
     def test_sorting_return_results_by_guest_rating(self):
-        print 'first scenario\n'
+        sleep(1 * WAIT_PERIOD)
+        print 'exiting - first scenario\n'
 
-    @groups(SINGLE_GROUP)
+    @groups(CONCURRENT)
     def test_second_scenario(self):
-        print 'second scenario\n'
+        sleep(2 * WAIT_PERIOD)
+        print 'exiting - second scenario\n'
 
-    @groups(SINGLE_GROUP)
+    @groups(CONCURRENT)
     def test_third_scenario(self):
-        print 'third scenario\n'
+        sleep(3 * WAIT_PERIOD)
+        print 'exiting - third scenario\n'
 
-    @groups(SINGLE_GROUP)
+    @groups(CONCURRENT)
     def test_fourth_scenario(self):
-        print 'fourth scenario\n'
+        sleep(4 * WAIT_PERIOD)
+        print 'exiting - fourth scenario\n'
 
-    @groups(SINGLE_GROUP)
+    @groups(CONCURRENT)
     def test_fifth_scenario(self):
-        print 'fifth scenario\n'
-
-
-class MultipleGroupsTest(unittest.TestCase):
-    @groups(A_GROUP, ANOTHER_GROUP)
-    def test_sorting_return_results_by_guest_rating(self):
-        print 'first scenario\n'
-
-    @groups(A_GROUP, ANOTHER_GROUP)
-    def test_second_scenario(self):
-        print 'second scenario\n'
-
-    @groups(A_GROUP, ANOTHER_GROUP)
-    def test_third_scenario(self):
-        print 'third scenario\n'
-
-    @groups(A_GROUP, ANOTHER_GROUP)
-    def test_fourth_scenario(self):
-        print 'fourth scenario\n'
-
-    @groups(A_GROUP, ANOTHER_GROUP)
-    def test_fifth_scenario(self):
-        print 'fifth scenario\n'
-
-    @groups(A_GROUP, ANOTHER_GROUP, EXCLUDED_GROUP)
-    def test_sixth_scenario(self):
-        print 'sixth scenario\n'
+        sleep(5 * WAIT_PERIOD)
+        print 'exiting - fifth scenario\n'

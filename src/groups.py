@@ -18,6 +18,7 @@ SINGLE_GROUP = 'SINGLE_GROUP'
 A_GROUP = 'A_GROUP'
 ANOTHER_GROUP = 'ANOTHER_GROUP'
 EXCLUDED_GROUP = 'EXCLUDED_GROUP'
+CONCURRENT = 'CONCURRENT'
 
 def groups(*group_list):
     """Decorator that adds group name to test method for use with the attributes (-A) plugin.

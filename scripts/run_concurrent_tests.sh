@@ -16,9 +16,8 @@
 # limitations under the License.                                           #
 ############################################################################
 
-#This should parse the whole project looking for test classes and run only tests that are decorated with @groups and contain labels A_GROUP, ANOTHER_GROUP and do not
-#contain label EXCLUDED_GROUPS
-#The tests run in parallel and generate a junitxml report at the end of the execution.
+# These tests will be run concurrently.
+# This is to showcase the use of mp plugin.
 
-echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -E'"A_GROUP" in groups and "ANOTHER_GROUP" in groups and not "EXCLUDED_GROUP" in groups'
-nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -E'"A_GROUP" in groups and "ANOTHER_GROUP" in groups and not "EXCLUDED_GROUP" in groups'
+echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -A group=CONCURRENT
+nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -A group=CONCURRENT
