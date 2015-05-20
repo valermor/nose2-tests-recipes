@@ -35,5 +35,16 @@ _Beware of this issue_: if there is any import error you will not be able to see
     run_concurrent_tests.sh
 ```
 
+# Parameterized tests
+
+This makes use of the [params]() plugin.
+In the example, test values are stored in a class. Different providers are defined which inject data into the tests.
+
+### Example
+```
+    run_parameterized_tests.sh
+```
+
+
 # License
 The code in this project is distributed under the provision of the Apache License 2.0.

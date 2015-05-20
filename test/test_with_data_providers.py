@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 ############################################################################
 # Copyright 2015 Valerio Morsella                                          #
 #                                                                          #
@@ -16,8 +14,24 @@
 # limitations under the License.                                           #
 ############################################################################
 
-# These tests will be run concurrently.
-# This is to showcase the use of mp plugin.
+import unittest
+from nose2.tools import params
+from src.data_providers import odd_configs_data_provider, even_configs_data_provider
+from src.groups import DATA_PROVIDER, groups
 
-echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --config nose2.cfg -A group=CONCURRENT
-nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --config nose2.cfg -A group=CONCURRENT
+
+class ConcurrencyTest(unittest.TestCase):
+
+    @groups(DATA_PROVIDER)
+    @params(*odd_configs_data_provider)
+    def test_odd_configs(self, config):
+        print 'Running {n}: '.format(n=config.name)
+        print 'Config says: {say}, '.format(say=config.value)
+        print 'number #{num}\n'.format(num=config.number)
+
+    @groups(DATA_PROVIDER)
+    @params(*even_configs_data_provider)
+    def test_even_configs(self, config):
+        print 'Running {n}: '.format(n=config.name)
+        print 'Config says: {say}, '.format(say=config.value)
+        print 'number #{num}\n'.format(num=config.number)

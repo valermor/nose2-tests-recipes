@@ -19,8 +19,6 @@ import unittest
 from src.groups import groups, SINGLE_GROUP, A_GROUP, ANOTHER_GROUP, EXCLUDED_GROUP
 
 
-
-
 class SingleGroupTest(unittest.TestCase):
 
     @groups(SINGLE_GROUP)

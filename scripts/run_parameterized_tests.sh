@@ -16,8 +16,7 @@
 # limitations under the License.                                           #
 ############################################################################
 
-# These tests will be run concurrently.
-# This is to showcase the use of mp plugin.
+#These test show the usage of parameterized tests.
 
-echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --config nose2.cfg -A group=CONCURRENT
-nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --config nose2.cfg -A group=CONCURRENT
+echo nose2 --plugin nose2.plugins.attrib--config nose2.cfg -A group=SINGLE_GROUP
+nose2 --plugin nose2.plugins.attrib --config nose2.cfg -A group=DATA_PROVIDER

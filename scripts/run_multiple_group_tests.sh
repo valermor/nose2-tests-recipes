@@ -20,5 +20,5 @@
 #contain label EXCLUDED_GROUPS
 #The tests run in parallel and generate a junitxml report at the end of the execution.
 
-echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -E'"A_GROUP" in groups and "ANOTHER_GROUP" in groups and not "EXCLUDED_GROUP" in groups'
-nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -E'"A_GROUP" in groups and "ANOTHER_GROUP" in groups and not "EXCLUDED_GROUP" in groups'
+echo nose2 --plugin nose2.plugins.attrib --config nose2.cfg -E'"A_GROUP" in groups and "ANOTHER_GROUP" in groups and not "EXCLUDED_GROUP" in groups'
+nose2 --plugin nose2.plugins.attrib --config nose2.cfg -E'"A_GROUP" in groups and "ANOTHER_GROUP" in groups and not "EXCLUDED_GROUP" in groups'

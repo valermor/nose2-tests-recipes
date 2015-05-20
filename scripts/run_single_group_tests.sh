@@ -19,5 +19,5 @@
 #This should parse the whole project looking for test classes and run only tests that are decorated with @groups and contain label SINGLE_GROUP
 #The test run in parallel and generate a junitxml report at the end of the execution.
 
-echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -A group=SINGLE_GROUP
-nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --plugin nose2.plugins.junitxml -N 5 --config nose2.cfg -A group=SINGLE_GROUP
+echo nose2 --plugin nose2.plugins.attrib--config nose2.cfg -A group=SINGLE_GROUP
+nose2 --plugin nose2.plugins.attrib --config nose2.cfg -A group=SINGLE_GROUP

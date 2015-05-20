@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 ############################################################################
 # Copyright 2015 Valerio Morsella                                          #
 #                                                                          #
@@ -16,8 +14,24 @@
 # limitations under the License.                                           #
 ############################################################################
 
-# These tests will be run concurrently.
-# This is to showcase the use of mp plugin.
+class TestConfig(object):
+    """
+    Class storing configuration values for the tests.
+    """
+    def __init__(self, name, value, number):
+        super(TestConfig, self).__init__()
+        self.name = name
+        self.value = value
+        self.number = number
 
-echo nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --config nose2.cfg -A group=CONCURRENT
-nose2 --plugin nose2.plugins.attrib --plugin nose2.plugins.mp --config nose2.cfg -A group=CONCURRENT
+
+FIRST_TEST_CONFIG = TestConfig('config #1', 'this is the first configuration', 1)
+SECOND_TEST_CONFIG = TestConfig('config #2', 'this is the second configuration', 2)
+THIRD_TEST_CONFIG = TestConfig('config #3', 'this is the third configuration', 3)
+FOURTH_TEST_CONFIG = TestConfig('config #4', 'this is the fourth configuration', 4)
+FIFTH_TEST_CONFIG = TestConfig('config #5', 'this is the fifth configuration', 5)
+
+all_configs = [FIRST_TEST_CONFIG, SECOND_TEST_CONFIG, THIRD_TEST_CONFIG, FOURTH_TEST_CONFIG, FIFTH_TEST_CONFIG]
+
+odd_configs_data_provider = tuple(filter(lambda x: (x.number % 2) == 1, all_configs))
+even_configs_data_provider = tuple(filter(lambda x: (x.number % 2) == 0, all_configs))
