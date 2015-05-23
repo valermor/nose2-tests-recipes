@@ -45,24 +45,24 @@ class SingleGroupTest(unittest.TestCase):
 class MultipleGroupsTest(unittest.TestCase):
     @groups(A_GROUP, ANOTHER_GROUP)
     def test_sorting_return_results_by_guest_rating(self):
-        print 'first scenario\n'
+        print 'first scenario from multiple groups tests\n'
 
     @groups(A_GROUP, ANOTHER_GROUP)
     def test_second_scenario(self):
-        print 'second scenario\n'
+        print 'second scenario from multiple groups tests\n'
 
     @groups(A_GROUP, ANOTHER_GROUP)
     def test_third_scenario(self):
-        print 'third scenario\n'
+        print 'third scenario from multiple groups tests\n'
 
     @groups(A_GROUP, ANOTHER_GROUP)
     def test_fourth_scenario(self):
-        print 'fourth scenario\n'
+        print 'fourth scenario from multiple groups tests\n'
 
     @groups(A_GROUP, ANOTHER_GROUP)
     def test_fifth_scenario(self):
-        print 'fifth scenario\n'
+        print 'fifth scenario from multiple groups tests\n'
 
     @groups(A_GROUP, ANOTHER_GROUP, EXCLUDED_GROUP)
     def test_sixth_scenario(self):
-        print 'sixth scenario\n'
+        print 'sixth scenario from multiple groups tests\n'

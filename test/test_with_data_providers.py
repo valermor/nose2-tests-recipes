@@ -26,12 +26,10 @@ class ConcurrencyTest(unittest.TestCase):
     @params(*odd_configs_data_provider)
     def test_odd_configs(self, config):
         print 'Running {n}: '.format(n=config.name)
-        print 'Config says: {say}, '.format(say=config.value)
-        print 'number #{num}\n'.format(num=config.number)
+        print 'Config #{num} says: {say}, '.format(num=config.number, say=config.value)
 
     @groups(DATA_PROVIDER)
     @params(*even_configs_data_provider)
     def test_even_configs(self, config):
         print 'Running {n}: '.format(n=config.name)
-        print 'Config says: {say}, '.format(say=config.value)
-        print 'number #{num}\n'.format(num=config.number)
+        print 'Config #{num} says: {say}, '.format(num=config.number, say=config.value)
